@@ -41,7 +41,9 @@ function App() {
                 <Route path="/" element={
                     <>
                         <SearchBar handleSearch = {handleSearch}/>
-                        <Gallery data={data} />
+                        <DataContext.Provider value={data}>
+                          <Gallery />
+                        </DataContext.Provider>
                     </>
                 } />
                 <Route path="/album/:id" element={<AlbumView />} />
